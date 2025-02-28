@@ -1,4 +1,4 @@
-# Tutorial-Easy-customizable-Apache-server-setup-on-Ubuntu-Linux-VPS-without-email
+# Tutorial-Easy-customizable-Apache-server-setup-without-email
 Tutorial of how to do a setup of a Ubuntu Linux VPS server with apache with or without domains, but WITHOUT email. Tutorial offers customizable options depending on your use case. For beginners 
 
 This tutorial has customizable options depending on what level of security you want on your server. You therefore have choices about which sections you wish to implement. This will all be made clear during the tutorial. 
