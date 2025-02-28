@@ -143,7 +143,7 @@ See separate sub-page on this at https://github.com/verachell/Tutorial-Easy-cust
 
 **Goal:** serve a static html page as a placeholder for your first site
 
-We will set up the web root for your sites. We will have different folders for different sites. If you prefer, you can come back later to this section to add your second or subsequent folders, but you do need to start with your first one.
+We will set up the web root for your sites. We will have different folders for different sites. Here we will start with your first site, and later you will add others.
 
 As the non-privileged user, go in your home directory in your ssh terminal (if you are not sure, type cd with no arguments and it will put you in your home dir). Then make a directory public_html
 
@@ -194,7 +194,7 @@ Then restart apache:
 
 `sudo systemctl restart apache2`
 
-Now go to the browser and navigate to `http://your.server.ip.address` You should now see the result of the placeholder html you typed in earlier. If you do not, check that there are the same execute perms of o+x on public_html and on the example directory: Apache needs a full path of permissions. Be sure to restart apache 2 as above (there is no harm in re-doing it). If problems still persist, firstly, go through the steps in this section and check you have done all the steps, and double check spelling - a misspelled directory name or a missed step in the Apache settings mentioned above can make all the difference and this has been the source of almost all my problems. If the problem persists, check Apache errors in the terminal window by doing `sudo cat /var/log/apache2/error.log | tail `. It really should "just work". If that does not help, raise an issue on this repo stating what version of Ubuntu (there is no wrong answer - this helps me if I am trying to replicate the problem).
+Now go to the browser and navigate to `http://your.server.ip.address` You should now see the result of the placeholder html you typed in earlier. If you do not, check that there are the same execute perms of o+x on public_html and on the example directory: Apache needs a full path of permissions. Be sure to restart apache 2 as above (there is no harm in re-doing it). If problems still persist, firstly, go through the steps in this section and check you have done all the steps, and double check spelling - a misspelled directory name or a missed step in the Apache settings mentioned above can make all the difference and this has been the source of almost all my problems. It really should "just work".  If the problem persists, check Apache errors in the terminal window by doing `sudo cat /var/log/apache2/error.log | tail `. If that does not help, raise an issue on this repo stating what version of Ubuntu (there is no wrong answer - this helps me if I am trying to replicate the problem).
 
 If you are not planning on using a domain, then you are done with the tutorial! You have set up a basic Apache server and served a static html file. What you choose to do next depends on your use case.
 
