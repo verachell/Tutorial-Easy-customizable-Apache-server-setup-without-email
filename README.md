@@ -137,4 +137,61 @@ You can omit this step if you're doing a quick tryout of less than 24 hours and 
 
 If you're setting up a long term website, you definitely need to do this.
 
-See separate sub-page on this AT TODO, and come back here after.
+See separate sub-page on this at https://github.com/verachell/Tutorial-Easy-customizable-Apache-server-setup-without-email/blob/main/Protect-from-brute-force-attacks.md and come back here after.
+
+## Step 7: set up the web root and display a static html test file
+
+**Goal:** serve a static html page as a placeholder for your first site
+
+We will set up the web root for your sites. We will have different folders for different sites. If you prefer, you can come back later to this section to add your second or subsequent folders, but you do need to start with your first one.
+
+As the non-privileged user, go in your home directory in your ssh terminal (if you are not sure, type cd with no arguments and it will put you in your home dir). Then make a directory public_html
+
+`mkdir public_html`
+
+go into that directory
+
+`cd public_html`
+
+Now we will make the document root for your first site - this will be a directory. You need to pick a name for it. If you will not be using a domain name, call it anything you want e.g. firstsite. If you will be using a domain name (even though your domain is not yet connected) then call it your domain name minus the extension. e.g. for `example.com` you will use `example` as the directory name.
+
+Make that directory now, inside of public_html, e.g.
+
+`mkdir example`
+
+Then in Webmin (non-priv user), to to Webmin menu -> Tools -> File manager. Navigate to your document root (i.e. `example` or whatever you called it)
+
+Once inside that directory, create a new file called `index.html`. Put in some placeholder content e.g. `<h1>First site</h1>`
+
+Now we need to connect this location to Apache.
+
+Log out of Webmin as hte non-priv user and log into it as root. Go to the Webmin menu -> Servers -> Apache
+
+Now we will tell it where the document root is.
+
+Go to Existing Virtual Hosts tab, then click on Virtual Server. That is the server for your first site. On that page, there is a field called Document Root. it says `/var/www/html` but you want to change that. So click to specify another directory and select your `/home/newuser/public_html/example` directory (replace newuser and example with your values).
+
+Then click save. 
+
+Then, going again to Virtual Server, click on the box saying "Edit directives"
+
+Under DocumentRoot, you need to add the Directory section, unless those lines are already here. Replace newuser and example with your values.
+
+```
+DocumentRoot "/home/newuser/public_html/example"
+<Directory "/home/newuser/public_html/example">
+	Options +FollowSymLinks
+	Require all granted
+	AllowOverride All
+</Directory>
+```
+
+Then in your ssh terminal window, as the non-privileged user, type `cd` to get to your home directory, then `cd ..` then `ls -l`. If the perms of your user directory do not end with `r-x`, add execute permissions (Apache will need a full path of perms to be able to see your website files)
+
+`chmod o+x newuser`
+
+Then restart apache:
+
+`sudo systemctl restart apache2`
+
+Now go to the browser and navigate to `http://your.server.ip.address` You should now see the result of the placeholder html you typed in earlier. If you do not, check that there are the same execute perms of o+x on public_html and on the example directory: Apache needs a full path of permissions. Be sure to restart apache 2 as above (there is no harm in re-doing it). If problems still persist, firstly, go through the steps in this section and check you have done all the steps, and double check spelling - a misspelled directory name or a missed step in the Apache settings mentioned above can make all the difference and this has been the source of almost all my problems. If the problem persists, check Apache errors in the terminal window by doing `sudo cat /var/log/apache2/error.log | tail `. It really should "just work". If that does not help, raise an issue on this repo stating what version of Ubuntu (there is no wrong answer - this helps me if I am trying to replicate the problem).
