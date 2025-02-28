@@ -17,7 +17,7 @@ or
 **2. If you want to set up a longer-term Linux VPS server** e.g. to create ongoing website(s) with zero, one or more domains, go for a cheap linux VPS provider. There are several providers which offer 1G RAM at or under $5 per month, which likely will work out cheaper long term than DigitalOcean - although not necessarily cheaper than Clouding.io. 
 
 ## Step 0: Getting started
-**For the most part, everything in this tutorial is the same for both use cases.** Whenever there are differences between 1. the quick tryout at an hourly computing provider and 2. the traditional long term VPS server, **I will indicate what to do in which situation. **
+**For the most part, everything in this tutorial is the same for both use cases.** Whenever there are differences between 1. the quick tryout at an hourly computing provider and 2. the traditional long term VPS server, **I will indicate what to do in which situation.**
 
 In reality, your use case may fall somewhere in a continuum between these 2 stereotypical cases - for example, you might want to do a quick tryout with a domain at an hourly computing provider. Or run a long-term website on a traditional VPS host - but without a domain. Both types of hosts can handle any of the use cases. I'm just going for both ends of the continuum of what most people might typically want to do, instead of every possibility in between. **The tutorial is written in a way that you will easily be able to know what to do for your use case if it falls somewhere in between.**
 
@@ -34,7 +34,7 @@ Assuming you have your root password and your server's IP address, open a termin
 
 `ssh root@your.server.ip.address`
 
-Note that these instructions may differ slightly if your local machine is Mac or Windows, so make sure you know how to do ssh from your local machine. For Mac, see https://osxdaily.com/2017/04/28/howto-ssh-client-mac/ and for Windows see https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh
+Make sure you already have ssh set up on your local machine. For Mac, see https://osxdaily.com/2017/04/28/howto-ssh-client-mac/ and for Windows see https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh
 
 it will ask you about fingerprint, say yest, then it will prompt for the root password. Once logged in, you are ready to proceed with setting up your server.
 
