@@ -5,16 +5,16 @@ This tutorial has customizable options depending on what level of security you w
 
 This tutorial was done on Linux VPS servers using Ubuntu 22.04 and 24.04
 
+**NOTE:** if you want a fully featured web server with email, I already have a separate tutorial on that at [https://github.com/verachell/tutorial-setup-linux-VPS-server-with-apache](https://github.com/verachell/tutorial-setup-linux-VPS-server-with-apache), but please be aware it takes a LOT more time to do (because of nameservers and email). I wouldn't recommend running your own email server as it is a lot of hassle if things go wrong. Also, be aware that not all hosting providers will allow you to open the ports necessary for email anyway. It's much easier instead to outsource email separately by using a third party email provider and pointing your domain's mail records to it. Alternatively, you can always direct users to send mail to an existing email account you already own.
+
 ## What and who is this tutorial designed for?
 This beginner tutorial is suitable for use with a Linux VPS server without setting up email. There are 2 main use cases this is designed for:
 
-**1. If you just want to do a quick tryout for a few hours super-cheap,** without actually requiring a domain and without having to spend ongoing amounts, I recommend an hourly computing provider such as DigitalOcean (US) or Clouding.io (EU) where you create a droplet. A cheap 1G RAM droplet with 10G disk space is all you need. Then follow the instructions in this tutorial. Afterwards, destroy (not suspend or stop, you need to actually destroy) your server to avoid being charged any further.
+**1. If you just want to do a quick tryout for a few hours super-cheap,** without actually requiring a domain and without having to spend ongoing amounts, I recommend an hourly computing provider such as DigitalOcean (US) or Clouding.io (EU). A cheap 1G RAM server with 10G disk space is all you need. Then follow the instructions in this tutorial. Afterwards, destroy (not suspend or stop, you need to actually destroy) your server to avoid being charged any further.
 
 or
 
 **2. If you want to set up a longer-term Linux VPS server** e.g. to create ongoing website(s) with zero, one or more domains, go for a cheap linux VPS provider. There are several providers which offer 1G RAM at or under $5 per month, which likely will work out cheaper long term than DigitalOcean - although not necessarily cheaper than Clouding.io. 
-
-**NOTE:** if you want a fully featured web server with email, I already have a separate tutorial on that at [https://github.com/verachell/tutorial-setup-linux-VPS-server-with-apache](https://github.com/verachell/tutorial-setup-linux-VPS-server-with-apache), but please be aware it takes a LOT more time to do. I wouldn't recommend running your own email server as it is a lot of hassle if things go wrong. Also, be aware that not all hosting providers will allow you to open the ports necessary for email anyway. It's much easier instead to outsource email separately by using a third party email provider and pointing your domain's mail records to it. Alternatively, you can always direct users to send mail to an existing email account you already own.
 
 ## Step 0: Getting started
 **For the most part, everything in this tutorial is the same for both use cases.** Whenever there are differences between 1. the quick tryout at an hourly computing provider and 2. the traditional long term VPS server, **I will indicate what to do in which situation. **
@@ -98,3 +98,43 @@ Assuming you're done with the update (or you didn't do it) move along to next st
 In the Webmin menu on the left, go to Unused Modules, click on Apache webserver, and hit install - you'll need to approve the installation of several packages, that's fine. Hit Install Now. Then on Webmin menu click on Refresh Modules.
 
 To check the install was successful, open a new browser window and navigate to the ip address of your server via http (not https). You should see the default apache page. This is good. 
+
+## Step 5: Add a non-privileged user
+**Goal:** For security reasons, add a non-privileged user. You will also add this user to Webmin
+
+You shouldn't be doing everything as root - in fact, you should do as little as possible as root. It takes next to no time to add a safe user. In the server terminal window, do this, replacing newuser with your desired username - ideally something hard to guess:
+
+`adduser newuser `
+
+Follow prompts to add user password. Then, add user to sudo:
+
+`usermod -aG sudo newuser`
+
+again, replacing newuser with the username you made.
+
+_Tip: Now that you have webmin, you don't have to use ssh on a terminal window to use the command line on your server. If you prefer, you can use the terminal built into Webmin. You can access it on the Webmin menu, under Tools -> Terminal._
+
+### Add the non-privileged user to Webmin
+Go to the Webmin menu, click on Webmin -> Webmin Users (do NOT go to System -> Users)
+
+On the Webmin Users window, click on the tab "Create a new safe user"
+
+For username, type in the name of your existing non-privileged user e.g. newuser (don't worry, this will not overwrite any of your user's existing files)
+
+Password: choose "set to" and type in a password for your user to use with Webmin. This should be different to the user's regular password.
+
+Then scroll down a bit to "Available Webmin Modules" and pick what your user should have access to. I recommend clicking Select All toget everything. At the very least, you'll definitely want File Manager, Terminal, upload and download. But I recommend everything. If you change your mind later you can always edit this later on.
+
+Now click create.
+
+### Log into Webmin as the new user
+Then log out of Webmin and check you can log in again to Webmin `http://your.server.ip.address:10000` but as your new user with the new Webmin password.
+
+_Tip: Remember, your new user only uses the webmin password on the webmin login screen. On any terminal window (even if doing a sudo command inside the built-in Webmin terminal window) use the original password for the new user._
+
+## Step 6 (optional): protect your server from brute force attacks
+You can omit this step if you're doing a quick tryout of less than 24 hours and not using any sensitive information.
+
+If you're setting up a long term website, you definitely need to do this.
+
+See separate sub-page on this AT TODO, and come back here after.
