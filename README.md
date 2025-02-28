@@ -165,7 +165,7 @@ Once inside that directory, create a new file called `index.html`. Put in some p
 
 Now we need to connect this location to Apache.
 
-Log out of Webmin as hte non-priv user and log into it as root. Go to the Webmin menu -> Servers -> Apache
+Log out of Webmin as the non-priv user and log into it as root. Go to the Webmin menu -> Servers -> Apache
 
 Now we will tell it where the document root is.
 
@@ -195,3 +195,18 @@ Then restart apache:
 `sudo systemctl restart apache2`
 
 Now go to the browser and navigate to `http://your.server.ip.address` You should now see the result of the placeholder html you typed in earlier. If you do not, check that there are the same execute perms of o+x on public_html and on the example directory: Apache needs a full path of permissions. Be sure to restart apache 2 as above (there is no harm in re-doing it). If problems still persist, firstly, go through the steps in this section and check you have done all the steps, and double check spelling - a misspelled directory name or a missed step in the Apache settings mentioned above can make all the difference and this has been the source of almost all my problems. If the problem persists, check Apache errors in the terminal window by doing `sudo cat /var/log/apache2/error.log | tail `. It really should "just work". If that does not help, raise an issue on this repo stating what version of Ubuntu (there is no wrong answer - this helps me if I am trying to replicate the problem).
+
+If you are not planning on using a domain, then you are done with the tutorial! You have set up a basic Apache server and served a static html file. What you choose to do next depends on your use case.
+
+Otherwise, move on to find out how to connect one or more domains to Apache. You can serve up however many different sites according to the number of domains you connect.
+
+## Step 8 (optional): connect your first domain name and set up SSL
+Rest assured you do NOT need to connect a domain name. If you're doing a quick tryout, you can stop here. If you're unsure, you can skip this for now and come back to it at any time later. Here is how to know what to do:
+
+You will want to connect domain name(s) if:
+
+- you plan on serving more than one website on the server (covered here). Or
+- you want to use an SSL certificate on your site from a trusted certificate authority (also covered). Or
+- you want something more memorable than typing the IP address every time you want to view your site
+
+See separate sub-page on this at TODO and come back here after.
