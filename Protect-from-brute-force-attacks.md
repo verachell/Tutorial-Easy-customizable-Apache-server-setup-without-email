@@ -106,4 +106,4 @@ then restart ssh
 
 and now log in on a new terminal as new user with SSH keys as before. This should work. Try a new connection and try to log in as root, it should be denied. 
 
-Now return to the main tutorial and continue at Step 7
+Now return to the main tutorial and continue at Step 7: https://github.com/verachell/Tutorial-Easy-customizable-Apache-server-setup-without-email/tree/main?tab=readme-ov-file#step-7-set-up-the-web-root-and-display-a-static-html-test-file
