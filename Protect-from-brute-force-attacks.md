@@ -105,3 +105,5 @@ then restart ssh
 `sudo systemctl restart ssh`
 
 and now log in on a new terminal as new user with SSH keys as before. This should work. Try a new connection and try to log in as root, it should be denied. 
+
+Now return to the main tutorial and continue at Step 7
