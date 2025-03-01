@@ -36,7 +36,7 @@ Assuming you have your root password and your server's IP address, open a termin
 
 Make sure you already have ssh set up on your local machine. For Mac, see https://osxdaily.com/2017/04/28/howto-ssh-client-mac/ and for Windows see https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh
 
-it will ask you about fingerprint, say yest, then it will prompt for the root password. Once logged in, you are ready to proceed with setting up your server.
+it will ask you about fingerprint, say yes, then it will prompt for the root password. Once logged in, you are ready to proceed with setting up your server.
 
 _Tip: for DigitalOcean, while you could open a terminal and do ssh as above, you have the option to not bother with that. Instead in your droplets list in dashboard, go in the right hand column of that droplet, then select access console, then "Launch droplet console". This automatically logs you in to a terminal window._
 
@@ -57,7 +57,7 @@ ufw allow 53/tcp
 ufw allow 53/udp
 ufw enable
 ```
-**NOTE:** Unlike traditional long-term VPS servers, DigitalOcean and Clouding.io each have things to be aware of. In DigitalOcean, the activation of your firewall will likely interfere with the console window that you launch from within the DigitalOcean dashboard. So on DigitalOcean, if you choose to implement the firewall you may like to avoid console usage and simply ssh in via a terminal window as you would for other servers. 
+**NOTE:** Unlike traditional long-term VPS servers, DigitalOcean and Clouding.io each have firewall-related things to be aware of. In DigitalOcean, the activation of your firewall will likely interfere with the console window that you launch from within the DigitalOcean dashboard. So on DigitalOcean, if you choose to implement the firewall you may like to avoid console usage and simply ssh in via a terminal window as you would for other servers. 
 Clouding.io takes a different approach - they have a pre-set firewall in your dashboard which allows you to specify ports that you want open in those settings. Their basic default firewall has reasonable settings; you'll likely only need to add port 10000 to it for now (unless you need to open other ports later)
 
 ## Step 3: Install Webmin
@@ -137,7 +137,7 @@ You can omit this step if you're doing a quick tryout of less than 24 hours and 
 
 If you're setting up a long term website, you definitely need to do this.
 
-See separate sub-page on this at https://github.com/verachell/Tutorial-Easy-customizable-Apache-server-setup-without-email/blob/main/Protect-from-brute-force-attacks.md and come back here after.
+See separate sub-page on this repository at https://github.com/verachell/Tutorial-Easy-customizable-Apache-server-setup-without-email/blob/main/Protect-from-brute-force-attacks.md and come back here after.
 
 ## Step 7: set up the web root and display a static html test file
 
@@ -209,9 +209,9 @@ You will want to connect domain name(s) if:
 - you want to use an SSL certificate on your site from a trusted certificate authority (also covered). Or
 - you want something more memorable than typing the IP address every time you want to view your site
 
-See separate sub-page on this at https://github.com/verachell/Tutorial-Easy-customizable-Apache-server-setup-without-email/blob/main/Connect-first-domain-and-set-up-ssl.md and come back here after.
+See separate sub-page on this repository at https://github.com/verachell/Tutorial-Easy-customizable-Apache-server-setup-without-email/blob/main/Connect-first-domain-and-set-up-ssl.md and come back here after.
 
 ## Step 9 (optional): connect your second or subsequent domain and set up SSL
 You may wish to set up more than one site. In that case, you will want to server your other site at a different domain name, still at the same server. Apache is designed to be easily able to do that.
 
-See the separate sub-page on this at TODO
+See the separate sub-page on this repository at https://github.com/verachell/Tutorial-Easy-customizable-Apache-server-setup-without-email/blob/main/connect-second-or-subsequent-domain-and-add-ssl.md 
