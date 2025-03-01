@@ -209,4 +209,9 @@ You will want to connect domain name(s) if:
 - you want to use an SSL certificate on your site from a trusted certificate authority (also covered). Or
 - you want something more memorable than typing the IP address every time you want to view your site
 
-See separate sub-page on this at TODO and come back here after.
+See separate sub-page on this at https://github.com/verachell/Tutorial-Easy-customizable-Apache-server-setup-without-email/blob/main/Connect-first-domain-and-set-up-ssl.md and come back here after.
+
+## Step 9 (optional): connect your second or subsequent domain and set up SSL
+You may wish to set up more than one site. In that case, you will want to server your other site at a different domain name, still at the same server. Apache is designed to be easily able to do that.
+
+See the separate sub-page on this at TODO
