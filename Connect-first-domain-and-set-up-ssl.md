@@ -96,3 +96,4 @@ Log out of Webmin. In your terminal connection, restart Webmin:
 
 You should now be able to log into Webmin securely at your primary domain name e.g. `https://example.com:10000`
 
+You now have an Apache server connected to a domain serving up a static html file. If you wish to add additional domains to serve other sites from this server, see the separate sub-page on this repository at https://github.com/verachell/Tutorial-Easy-customizable-Apache-server-setup-without-email/blob/main/connect-second-or-subsequent-domain-and-add-ssl.md Otherwise, you are done!
