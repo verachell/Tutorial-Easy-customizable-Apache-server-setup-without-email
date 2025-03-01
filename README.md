@@ -212,6 +212,6 @@ You will want to connect domain name(s) if:
 See separate sub-page on this repository at https://github.com/verachell/Tutorial-Easy-customizable-Apache-server-setup-without-email/blob/main/Connect-first-domain-and-set-up-ssl.md and come back here after.
 
 ## Step 9 (optional): connect your second or subsequent domain and set up SSL
-You may wish to set up more than one site. In that case, you will want to server your other site at a different domain name, still at the same server. Apache is designed to be easily able to do that.
+You may wish to set up more than one site. In that case, you will want to serve your other site at a different domain name, still at the same server. Apache is designed to be easily able to do that.
 
 See the separate sub-page on this repository at https://github.com/verachell/Tutorial-Easy-customizable-Apache-server-setup-without-email/blob/main/connect-second-or-subsequent-domain-and-add-ssl.md 
