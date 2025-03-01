@@ -1,0 +1,3 @@
+## 9. Setting up your second or subsequent domains and adding SSL
+Setting up a new document root for a new domain
+Navigate (however you want to do it - webmin or terminal) to the non-priv user home directory, then to public_html. Then make a new directory and call it whatever your next domain is minus the tld (e.g. for anotherdomain.com just call the directory anotherdomain). Ensure it is o+x permissions if it does not already (it should already havge that). Then go inside that new directory and create a new file called index.html and put some content in it that is different from your previous one(s) e.g. <h1>Another site</h1>
