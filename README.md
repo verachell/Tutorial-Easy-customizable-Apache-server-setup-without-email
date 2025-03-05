@@ -48,7 +48,7 @@ Clouding.io takes a different approach - they have a pre-set firewall in your da
 
 Now that you're logged in, you need to ensure the ports you need will be open. Type the following series of commands into your server to open these ports. 
 
-**If you are just doing a quick tryout that you will delete in a short timeframe, you can skip this step.** In either case, if on Clouding.io, you will still need to add port 10000 to their default firewall on your dashboard, see note below.
+**If you are just doing a quick tryout that you will delete in a short timeframe, you can skip this step.** In either case, if on Clouding.io, you will still need to add port 10000 to their default firewall on your dashboard, see note above.
 
 _Tip: if your server does not recognize the ufw command, install it with `apt install ufw`_
 ```
