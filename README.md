@@ -187,7 +187,7 @@ DocumentRoot "/home/newuser/public_html/example"
 </Directory>
 ```
 
-Then in your ssh terminal window, as the non-privileged user, type `cd` to get to your home directory, then `cd ..` then `ls -l`. If the perms of your user directory do not end with `r-x`, add execute permissions (Apache will need a full path of perms to be able to see your website files)
+Then in a terminal window, as the non-privileged user, type `cd` to get to your home directory, then `cd ..` then `ls -l`. If the perms of your user directory do not end with `r-x`, add execute permissions (Apache will need a full path of perms to be able to see your website files)
 
 `chmod o+x newuser`
 
