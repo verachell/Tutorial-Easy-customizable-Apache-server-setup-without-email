@@ -44,11 +44,11 @@ _Tip: for DigitalOcean, while you could open a terminal and do ssh as above, you
 **Goal:** open ports you'll later need and optionally activate the firewall
 
 **NOTE:** Unlike traditional long-term VPS servers, DigitalOcean and Clouding.io each have firewall-related things to be aware of. In DigitalOcean, the activation of your firewall will likely interfere with the console window that you launch from within the DigitalOcean dashboard. So on DigitalOcean, if you choose to implement the firewall you may like to avoid console usage and simply ssh in via a terminal window as you would for other servers. 
-Clouding.io takes a different approach - they have a pre-set firewall in your dashboard which allows you to specify ports that you want open in those settings. Their basic default firewall has reasonable settings; you'll likely only need to add port 10000 to it for now (unless you need to open other ports later)
+Clouding.io takes a different approach - they have a pre-set firewall in your dashboard which allows you to specify ports that you want open in those settings. Their basic default firewall has reasonable settings; you'll likely only need to add port 10000 to it for now (unless you need to open other ports later) and skip the commands below.
 
 Now that you're logged in, you need to ensure the ports you need will be open. Type the following series of commands into your server to open these ports. 
 
-If you are just doing a quick tryout that you will delete in a short timeframe, you can skip this step. In either case, if on Clouding.io, you will still need to add port 10000 to their default firewall on your dashboard, see note below.
+**If you are just doing a quick tryout that you will delete in a short timeframe, you can skip this step.** In either case, if on Clouding.io, you will still need to add port 10000 to their default firewall on your dashboard, see note below.
 
 _Tip: if your server does not recognize the ufw command, install it with `apt install ufw`_
 ```
