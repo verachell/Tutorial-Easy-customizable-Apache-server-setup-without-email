@@ -43,6 +43,9 @@ _Tip: for DigitalOcean, while you could open a terminal and do ssh as above, you
 ## Step 2: Open the ports you need
 **Goal:** open ports you'll later need and optionally activate the firewall
 
+**NOTE:** Unlike traditional long-term VPS servers, DigitalOcean and Clouding.io each have firewall-related things to be aware of. In DigitalOcean, the activation of your firewall will likely interfere with the console window that you launch from within the DigitalOcean dashboard. So on DigitalOcean, if you choose to implement the firewall you may like to avoid console usage and simply ssh in via a terminal window as you would for other servers. 
+Clouding.io takes a different approach - they have a pre-set firewall in your dashboard which allows you to specify ports that you want open in those settings. Their basic default firewall has reasonable settings; you'll likely only need to add port 10000 to it for now (unless you need to open other ports later)
+
 Now that you're logged in, you need to ensure the ports you need will be open. Type the following series of commands into your server to open these ports. 
 
 If you are just doing a quick tryout that you will delete in a short timeframe, you can skip this step. In either case, if on Clouding.io, you will still need to add port 10000 to their default firewall on your dashboard, see note below.
@@ -57,15 +60,13 @@ ufw allow 53/tcp
 ufw allow 53/udp
 ufw enable
 ```
-**NOTE:** Unlike traditional long-term VPS servers, DigitalOcean and Clouding.io each have firewall-related things to be aware of. In DigitalOcean, the activation of your firewall will likely interfere with the console window that you launch from within the DigitalOcean dashboard. So on DigitalOcean, if you choose to implement the firewall you may like to avoid console usage and simply ssh in via a terminal window as you would for other servers. 
-Clouding.io takes a different approach - they have a pre-set firewall in your dashboard which allows you to specify ports that you want open in those settings. Their basic default firewall has reasonable settings; you'll likely only need to add port 10000 to it for now (unless you need to open other ports later)
 
 ## Step 3: Install Webmin
 **Goal:** install the Webmin control panel and log into your server on it
 
 The Webmin control panel, which is written entirely in Perl, provides convenient GUI access to managing your VPS server. It allows you to proceed a lot faster than if you were doing everything via the command line.
 
-Still in the server command line, install Webmin as described on the official Webmin documentation at https://webmin.com/download/ - it's very easy and only has a few lines to enter. At the time of writing, these commands were as shown below, but use the commands on the link mentioned above since the info could change.
+Still in the server command line, install Webmin - it's very easy and only has a few lines to enter. At the time of writing, these commands were as shown below, but you may prefer to use the info on the official Webmin documentation at https://webmin.com/download/ since the info could change over time.
 ```
 curl -o webmin-setup-repos.sh https://raw.githubusercontent.com/webmin/webmin/master/webmin-setup-repos.sh
 sh webmin-setup-repos.sh
