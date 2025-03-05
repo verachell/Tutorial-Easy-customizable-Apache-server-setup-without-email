@@ -146,7 +146,7 @@ See separate sub-page on this repository at https://github.com/verachell/Tutoria
 
 We will set up the web root for your sites. We will have different folders for different sites. Here we will start with your first site, and later you will add others.
 
-As the non-privileged user, go in your home directory in your ssh terminal (if you are not sure, type cd with no arguments and it will put you in your home dir). Then make a directory public_html
+As the non-privileged user, go in your home directory e.g. via Webmin menu -> Tools -> Terminal (if you are not sure of your home directory, type cd in the terminal with no arguments and it will put you in your home dir). Then make a directory public_html
 
 `mkdir public_html`
 
