@@ -34,7 +34,7 @@ Assuming you have your root password and your server's IP address, open a termin
 
 `ssh root@your.server.ip.address`
 
-Make sure you already have ssh set up on your local machine. For Mac, see https://osxdaily.com/2017/04/28/howto-ssh-client-mac/ and for Windows see https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh
+ssh is likely on your machine already, but here is more info. For Mac, see https://osxdaily.com/2017/04/28/howto-ssh-client-mac/ and for Windows see https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh
 
 it will ask you about fingerprint, say yes, then it will prompt for the root password. Once logged in, you are ready to proceed with setting up your server.
 
