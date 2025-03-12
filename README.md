@@ -34,8 +34,6 @@ Assuming you have your root password and your server's IP address, open a termin
 
 `ssh root@your.server.ip.address`
 
-ssh is likely on your machine already, but here is more info. For Mac, see https://osxdaily.com/2017/04/28/howto-ssh-client-mac/ and for Windows see https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh
-
 it will ask you about fingerprint, say yes, then it will prompt for the root password. Once logged in, you are ready to proceed with setting up your server.
 
 _Tip: for DigitalOcean, while you could open a terminal and do ssh as above, you have the option to not bother with that. Instead in your droplets list in dashboard, go in the right hand column of that droplet, then select access console, then "Launch droplet console". This automatically logs you in to a terminal window._
