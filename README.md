@@ -120,7 +120,7 @@ On the Webmin Users window, click on the tab "Create a new safe user"
 
 For username, type in the name of your existing non-privileged user e.g. newuser (don't worry, this will not overwrite any of your user's existing files)
 
-Password: choose "set to" and type in a password for your user to use with Webmin. This should be different to the user's regular password.
+Password: choose "set to" and type in a password for your user to use with Webmin. If this is for a long-term website, this password should be different to the user's regular password, because it can otherwise get confusing when you change passwords. For a quick tryout it's OK to keep both passwords the same.
 
 Then scroll down a bit to "Available Webmin Modules" and pick what your user should have access to. I recommend clicking Select All toget everything. At the very least, you'll definitely want File Manager, Terminal, upload and download. But I recommend everything. If you change your mind later you can always edit this later on.
 
