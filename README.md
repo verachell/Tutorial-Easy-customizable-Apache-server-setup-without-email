@@ -3,7 +3,7 @@ Tutorial of how to do a setup of a Ubuntu Linux VPS server with apache with or w
 
 This tutorial has customizable options depending on what level of security you want on your server. You therefore have choices about which sections you wish to implement. This will all be made clear during the tutorial. 
 
-This tutorial was done on Linux VPS servers using Ubuntu 22.04 and 24.04
+This tutorial was done on Linux VPS servers using Ubuntu 22.04 and 24.04 with all the options. It was also done on Debian 12 without domain names.
 
 **NOTE:** if you want a fully featured web server with email, I already have a separate tutorial on that at [https://github.com/verachell/tutorial-setup-linux-VPS-server-with-apache](https://github.com/verachell/tutorial-setup-linux-VPS-server-with-apache), but please be aware it takes a LOT more time to do (because of nameservers and email). I wouldn't recommend running your own email server as it is a lot of hassle if things go wrong. Also, be aware that not all hosting providers will allow you to open the ports necessary for email anyway. It's much easier instead to outsource email separately by using a third party email provider and pointing your domain's mail records to it. Alternatively, you can always direct users to send mail to an existing email account you already own.
 
